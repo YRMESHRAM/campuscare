@@ -67,3 +67,6 @@ $RECYCLE.BIN/
 .cache/
 .parcel-cache/
 .turbo/
+
+# Project documentation / PR notes
+pr.md

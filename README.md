@@ -25,6 +25,7 @@ CampusCare is a full-stack web application that streamlines the process of raisi
 ## ✨ Features
 
 ### 👨‍🎓 Student
+
 - Register/login securely
 - Raise facility complaints with category, location, and priority
 - Track complaint status in real-time
@@ -32,11 +33,13 @@ CampusCare is a full-stack web application that streamlines the process of raisi
 - View complaint history and add comments
 
 ### 👩‍🏫 Faculty
+
 - View and manage complaints from assigned departments
 - Update complaint status and add resolution notes
 - Dashboard with complaint analytics
 
 ### 🛠️ Admin
+
 - Full user management (create, update, deactivate)
 - Bulk user import via CSV
 - Manage departments, facilities, and complaint categories
@@ -49,27 +52,29 @@ CampusCare is a full-stack web application that streamlines the process of raisi
 ## 🧰 Tech Stack
 
 ### Backend
-| Technology | Purpose |
-|---|---|
-| **Node.js** + **Express** | REST API server |
-| **MongoDB** + **Mongoose** | Database & ODM |
-| **JWT** + **bcryptjs** | Authentication & password hashing |
-| **Multer** | File/CSV uploads |
-| **Helmet** | HTTP security headers |
-| **express-rate-limit** | API rate limiting |
-| **Zod** | Request validation |
-| **Nodemon** | Development hot-reload |
-| **Vitest** + **Supertest** | API testing |
+
+| Technology                 | Purpose                           |
+| -------------------------- | --------------------------------- |
+| **Node.js** + **Express**  | REST API server                   |
+| **MongoDB** + **Mongoose** | Database & ODM                    |
+| **JWT** + **bcryptjs**     | Authentication & password hashing |
+| **Multer**                 | File/CSV uploads                  |
+| **Helmet**                 | HTTP security headers             |
+| **express-rate-limit**     | API rate limiting                 |
+| **Zod**                    | Request validation                |
+| **Nodemon**                | Development hot-reload            |
+| **Vitest** + **Supertest** | API testing                       |
 
 ### Frontend
-| Technology | Purpose |
-|---|---|
+
+| Technology              | Purpose                   |
+| ----------------------- | ------------------------- |
 | **React 18** + **Vite** | UI framework & build tool |
-| **React Router v6** | Client-side routing |
-| **TailwindCSS** | Utility-first styling |
-| **Axios** | HTTP client |
-| **Recharts** | Data visualization |
-| **Lucide React** | Icon library |
+| **React Router v6**     | Client-side routing       |
+| **TailwindCSS**         | Utility-first styling     |
+| **Axios**               | HTTP client               |
+| **Recharts**            | Data visualization        |
+| **Lucide React**        | Icon library              |
 
 ---
 
@@ -199,66 +204,48 @@ The frontend will be available at `http://localhost:5173`.
 ## 📜 Available Scripts
 
 ### Backend (`/backend`)
-| Command | Description |
-|---|---|
-| `npm run dev` | Start server with nodemon (hot-reload) |
-| `npm start` | Start server in production mode |
-| `npm run seed` | Seed database with initial data |
-| `npm test` | Run API tests with Vitest |
+
+| Command        | Description                            |
+| -------------- | -------------------------------------- |
+| `npm run dev`  | Start server with nodemon (hot-reload) |
+| `npm start`    | Start server in production mode        |
+| `npm run seed` | Seed database with initial data        |
+| `npm test`     | Run API tests with Vitest              |
 
 ### Frontend (`/frontend`)
-| Command | Description |
-|---|---|
-| `npm run dev` | Start Vite development server |
-| `npm run build` | Build for production |
+
+| Command           | Description                      |
+| ----------------- | -------------------------------- |
+| `npm run dev`     | Start Vite development server    |
+| `npm run build`   | Build for production             |
 | `npm run preview` | Preview production build locally |
 
 ---
 
 ## 🔌 API Overview
 
-| Method | Endpoint | Description | Auth |
-|---|---|---|---|
-| `POST` | `/api/auth/register` | Register a new user | Public |
-| `POST` | `/api/auth/login` | Login and receive JWT | Public |
-| `GET` | `/api/auth/me` | Get current user profile | ✅ |
-| `POST` | `/api/complaints` | Raise a new complaint | Student |
-| `GET` | `/api/complaints` | List complaints | ✅ |
-| `GET` | `/api/complaints/:id` | Get complaint detail | ✅ |
-| `PATCH` | `/api/complaints/:id/status` | Update complaint status | Faculty/Admin |
-| `GET` | `/api/notifications` | Get user notifications | ✅ |
-| `GET` | `/api/admin/users` | List all users | Admin |
-| `POST` | `/api/admin/users/import` | Bulk import users via CSV | Admin |
-| `GET` | `/api/admin/audit-logs` | View system audit logs | Admin |
+| Method  | Endpoint                     | Description               | Auth          |
+| ------- | ---------------------------- | ------------------------- | ------------- |
+| `POST`  | `/api/auth/register`         | Register a new user       | Public        |
+| `POST`  | `/api/auth/login`            | Login and receive JWT     | Public        |
+| `GET`   | `/api/auth/me`               | Get current user profile  | ✅            |
+| `POST`  | `/api/complaints`            | Raise a new complaint     | Student       |
+| `GET`   | `/api/complaints`            | List complaints           | ✅            |
+| `GET`   | `/api/complaints/:id`        | Get complaint detail      | ✅            |
+| `PATCH` | `/api/complaints/:id/status` | Update complaint status   | Faculty/Admin |
+| `GET`   | `/api/notifications`         | Get user notifications    | ✅            |
+| `GET`   | `/api/admin/users`           | List all users            | Admin         |
+| `POST`  | `/api/admin/users/import`    | Bulk import users via CSV | Admin         |
+| `GET`   | `/api/admin/audit-logs`      | View system audit logs    | Admin         |
 
 ---
 
 ## 👥 User Roles
 
-| Role | Access |
-|---|---|
-| **Student** | Raise and track own complaints, view notifications |
-| **Faculty** | View and resolve complaints in assigned department |
-| **Admin** | Full system access — users, departments, analytics, audit logs |
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature-name`
-3. Commit your changes: `git commit -m 'feat: add your feature'`
-4. Push to the branch: `git push origin feature/your-feature-name`
-5. Open a Pull Request
-
-Please follow [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `chore:`, `docs:`, etc.).
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.
-
----
+| Role        | Access                                                         |
+| ----------- | -------------------------------------------------------------- |
+| **Student** | Raise and track own complaints, view notifications             |
+| **Faculty** | View and resolve complaints in assigned department             |
+| **Admin**   | Full system access — users, departments, analytics, audit logs |
 
 <p align="center">Built with ❤️ for smarter campuses</p>
